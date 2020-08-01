@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:06:04 by user42            #+#    #+#             */
-/*   Updated: 2020/07/31 13:57:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/01 18:14:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	ft_init_player(t_param *param)
 	}
 	else
 	{
-		param->player.walk_speed = 4;
-		param->player.turn_speed = 4 * (M_PI / 180);
+		param->player.walk_speed = 3;
+		param->player.turn_speed = 3 * (M_PI / 180);
 	}
 	param->player.side = 0;
 	ft_orientation(param);

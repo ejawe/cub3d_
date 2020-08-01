@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:06:22 by user42            #+#    #+#             */
-/*   Updated: 2020/08/01 16:20:50 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/01 18:40:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,23 @@ void	ft_ray_top_bottom(t_param *param, float ray_angle)
 void	ft_color_tex(t_param *param, float wall_hit, int num)
 {
 	//printf("i = %d  -  taille = %d\n", num, param->tex[num].size_file);
-	
+	long int a = sizeof(param->tex[num].data_text);
+	//printf("a = %d \n", num, param->tex[num].size_file);
 	param->cast_all.texture_offsetx = (int)
 			((wall_hit * param->tex[num].img_width)
 			/ param->map.tile_size) % param->tex[num].img_width;
 	param->cast_all.texture_offsety = param->cast_all.dis_from_top *
 		((float)param->tex[num].img_height / param->cast_all.wall_st_height);
 	//printf("size = %d\n",(param->tex[num].img_width * param->cast_all.texture_offsety) + param->cast_all.texture_offsetx);
-	if (param->tex[num].data_text[(param->tex[num].img_width * param->cast_all.texture_offsety) +
-			param->cast_all.texture_offsetx])
-		param->cast_all.color =
-			param->tex[num].data_text[(param->tex[num].img_width *
-			param->cast_all.texture_offsety) +
-			param->cast_all.texture_offsetx];
+	//printf("--------  window_width = %d  -  window_height = %d\n", param->map.window_width, param->map.window_height);
+
+	if (((param->tex[num].img_width * param->cast_all.texture_offsety) +
+			param->cast_all.texture_offsetx) < a)
+		return ;
+	param->cast_all.color =
+		param->tex[num].data_text[(param->tex[num].img_width *
+		param->cast_all.texture_offsety) +
+		param->cast_all.texture_offsetx];
 }
 
 void	ft_walls_conditions(t_param *param)
@@ -96,6 +100,7 @@ void	ft_cast_all_rays(t_param *param)
 			param->cast_all.dis_from_top = y + (param->cast_all.wall_st_height
 			/ 2) - (param->map.window_height / 2);
 			ft_walls_conditions(param);
+			//param->cast_all.color = 0xFFFFFF;
 			param->data[(param->map.window_width * y) + strip_id] =
 				param->cast_all.color;
 		}

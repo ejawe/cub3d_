@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_path_texture.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:03:30 by user42            #+#    #+#             */
-/*   Updated: 2020/07/28 12:16:47 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/02 17:18:54 by ejawe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_check_after(char *line, int i)
 	}
 }
 
-char	*ft_get_string(char *line)
+char	*ft_get_string(char *line, t_param *param)
 {
 	int		i;
 	int		s;
@@ -76,9 +76,11 @@ char	*ft_get_string(char *line)
 					ft_isdigit(line[i])))
 			i++;
 		stock = ft_substr(line, s, i - s);
+		ft_check_after(line, i);
+		ft_check_extention_xpm(stock);
 	}
-	ft_check_after(line, i);
-	ft_check_extention_xpm(stock);
+	else
+		ft_free_all(param, 5);	
 	return (stock);
 }
 
@@ -89,19 +91,19 @@ int		ft_get_path_texture(char *line, t_param *param, int error)
 	i = 0;
 	if (line[0] == 'N' && line[1] == 'O' &&
 	param->tex[0].path_file == NULL)
-		param->tex[0].path_file = ft_get_string(&line[2]);
+		param->tex[0].path_file = ft_get_string(&line[2], param);
 	else if (line[0] == 'S' && line[1] == 'O' &&
 	param->tex[1].path_file == NULL)
-		param->tex[1].path_file = ft_get_string(&line[2]);
+		param->tex[1].path_file = ft_get_string(&line[2], param);
 	else if (line[0] == 'W' && line[1] == 'E' &&
 	param->tex[3].path_file == NULL)
-		param->tex[3].path_file = ft_get_string(&line[2]);
+		param->tex[3].path_file = ft_get_string(&line[2], param);
 	else if (line[0] == 'E' && line[1] == 'A' &&
 	param->tex[2].path_file == NULL)
-		param->tex[2].path_file = ft_get_string(&line[2]);
+		param->tex[2].path_file = ft_get_string(&line[2], param);
 	else if (line[0] == 'S' && line[1] == ' ' &&
 	param->tex[4].path_file == NULL)
-		param->tex[4].path_file = ft_get_string(&line[2]);
+		param->tex[4].path_file = ft_get_string(&line[2], param);
 	else
 		error = 5;
 	error = ft_check_error_path_texture(line, i, param, error);

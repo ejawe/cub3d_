@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 14:46:01 by user42            #+#    #+#             */
-/*   Updated: 2020/07/28 12:00:44 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/02 17:54:34 by ejawe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ int		main(int ac, char **av)
 	param.argument = ac;
 	if (ac == 2 || ac == 3)
 	{
-		fd = open(av[1], O_RDONLY);
-		ft_check_extention(av[1], fd);
+		fd = ft_check_extention(av[1], fd);
 		if (ac == 3)
 			ft_check_save_name(&param, av[2], fd);
 		ft_init_struct_map(&param);
@@ -66,5 +65,7 @@ int		main(int ac, char **av)
 		mlx_loop_hook(param.mlx_ptr, &ft_game_loop, &param);
 		mlx_loop(param.mlx_ptr);
 	}
+	else
+		ft_putstr_fd("Error\nCheck argument number.\n", 1);
 	return (0);
 }

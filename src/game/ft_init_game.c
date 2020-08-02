@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:05:04 by user42            #+#    #+#             */
-/*   Updated: 2020/08/01 16:47:17 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/02 17:23:40 by ejawe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	ft_screen_size(t_param *param)
 	param->infomap.reso_y = param->map.window_height;
 	param->map.num_rays = param->infomap.reso_x / param->map.wall_strip_width;
 	param->map.tile_size = param->infomap.reso_x / param->map.num_cols;
-	printf("sizex = %d  -  sizey = %d  -  window_width = %d  -  window_height = %d\n", sizex, sizey, param->map.window_width, param->map.window_height);
 }
 
 int		ft_init_game(t_param *param)

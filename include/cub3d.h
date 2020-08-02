@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:05:04 by user42            #+#    #+#             */
-/*   Updated: 2020/08/01 18:33:41 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/02 17:16:23 by ejawe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,7 @@ int					ft_space(char **newstr, int i, int j, char c);
 int					ft_get_orientation(t_param *param, int error);
 void				ft_info_screen_map(t_param *param);
 int					ft_get_number(char *line);
-char				*ft_get_string(char *line);
+char				*ft_get_string(char *line, t_param *param);
 int					ft_check_extention(char *arg, int fd);
 int					ft_init_game(t_param *param);
 int					key_press(int key, void *data);

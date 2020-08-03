@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_correct_map.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:04:37 by user42            #+#    #+#             */
-/*   Updated: 2020/07/26 20:03:41 by ejawe            ###   ########.fr       */
+/*   Updated: 2020/08/03 15:41:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,16 @@ int		ft_4_characters(t_param *param, int error)
 	return (error);
 }
 
-int		ft_check_correct_map(t_param *param, int error)
+void	ft_check_correct_map(t_param *param)
 {
+	int error;
+
+	error = 0;
 	error = ft_4_characters(param, error);
 	error = ft_check_points(param, error);
 	error = ft_check_orientation(param, error);
 	error = ft_get_orientation(param, error);
 	error = ft_check_wall_surrounded(param, error);
-	return (error);
+	if (error != 0)
+		ft_free_all(param, error);
 }

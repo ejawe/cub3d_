@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_path_texture.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:03:30 by user42            #+#    #+#             */
-/*   Updated: 2020/08/02 17:18:54 by ejawe            ###   ########.fr       */
+/*   Updated: 2020/08/03 13:30:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*ft_get_string(char *line, t_param *param)
 		ft_check_extention_xpm(stock);
 	}
 	else
-		ft_free_all(param, 5);	
+		ft_free_all(param, 5);
 	return (stock);
 }
 

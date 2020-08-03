@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 14:54:16 by user42            #+#    #+#             */
-/*   Updated: 2020/07/28 12:10:32 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/03 18:02:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ int	ft_check_extention(char *arg, int fd)
 	}
 	while (arg[i] != '\0')
 	{
-		if ((arg[i] == '.' && arg[i + 1] != 'c' &&
-					arg[i + 2] != 'u' && arg[i + 3] != 'b') ||
-				(arg[i] == '.' && ft_strlen(&arg[i]) != 4))
+		if (arg[0] == '.' && arg[0 + 1] == '/')
+			i = i + 2;
+		if ((arg[0] == '.' && arg[0 + 1] == '/' && arg[0 + 2] == '\0') ||
+			(arg[i] == '.' && arg[i + 1] != 'c' &&
+			arg[i + 2] != 'u' && arg[i + 3] != 'b') ||
+			(arg[i] == '.' && ft_strlen(&arg[i]) != 4))
 		{
 			ft_putstr_fd("Error\nCheck extention cub.\n", 1);
 			close(fd);

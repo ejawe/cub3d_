@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cast_all_rays.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:06:22 by user42            #+#    #+#             */
-/*   Updated: 2020/08/02 17:00:16 by ejawe            ###   ########.fr       */
+/*   Updated: 2020/08/03 13:18:35 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ void	ft_cast_all_rays(t_param *param)
 			param->cast_all.dis_from_top = y + (param->cast_all.wall_st_height
 			/ 2) - (param->map.window_height / 2);
 			ft_walls_conditions(param);
-			//param->cast_all.color = 0xFFFFFF;
 			param->data[(param->map.window_width * y) + strip_id] =
 				param->cast_all.color;
 		}

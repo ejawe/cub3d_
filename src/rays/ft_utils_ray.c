@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:07:18 by user42            #+#    #+#             */
-/*   Updated: 2020/08/01 18:28:16 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/03 13:32:03 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,14 @@ void	ft_taille_image(t_param *param)
 	param->tex[2].size_file = 0;
 	param->tex[3].size_file = 0;
 	param->tex[4].size_file = 0;
-
-	while(param->tex[0].data_text[param->tex[0].size_file])
+	while (param->tex[0].data_text[param->tex[0].size_file])
 		param->tex[0].size_file++;
-	while(param->tex[1].data_text[param->tex[1].size_file])
+	while (param->tex[1].data_text[param->tex[1].size_file])
 		param->tex[1].size_file++;
-	while(param->tex[2].data_text[param->tex[2].size_file])
+	while (param->tex[2].data_text[param->tex[2].size_file])
 		param->tex[2].size_file++;
-	while(param->tex[3].data_text[param->tex[3].size_file])
+	while (param->tex[3].data_text[param->tex[3].size_file])
 		param->tex[3].size_file++;
-	while(param->tex[4].data_text[param->tex[4].size_file])
+	while (param->tex[4].data_text[param->tex[4].size_file])
 		param->tex[4].size_file++;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:05:04 by user42            #+#    #+#             */
-/*   Updated: 2020/08/02 17:16:23 by ejawe            ###   ########.fr       */
+/*   Updated: 2020/08/03 15:42:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,7 @@ void				ft_free_tab_map(t_param *param);
 int					ft_check_wall_surrounded(t_param *param, int error);
 int					ft_check_wall_condition(t_param *param,
 						char **newstr, int error);
-int					ft_check_correct_map(t_param *param, int error);
+void				ft_check_correct_map(t_param *param);
 int					ft_space(char **newstr, int i, int j, char c);
 int					ft_get_orientation(t_param *param, int error);
 void				ft_info_screen_map(t_param *param);

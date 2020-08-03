@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:07:41 by user42            #+#    #+#             */
-/*   Updated: 2020/08/01 14:00:41 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/03 13:33:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int		ft_color_texture_sprite(t_param *param, int x, int y)
 
 	texture_offset_x = 0;
 	texture_offset_y = 0;
-
 	d = (y) * 256 - param->map.window_height * 128 +
 		param->sprite.s_height * 128;
 	texture_offset_x = (int)(256 *
@@ -29,7 +28,6 @@ int		ft_color_texture_sprite(t_param *param, int x, int y)
 			param->tex[4].img_width / param->sprite.s_width) / 256;
 	texture_offset_y = ((d * param->tex[4].img_height) / param->sprite.s_height)
 						/ 256;
-	
 	if ((param->tex[4].img_width * texture_offset_y) +
 			texture_offset_x <= param->tex[4].size_file)
 		color = param->tex[4].data_text[(param->tex[4].img_width *
@@ -55,7 +53,8 @@ void	ft_draw_sprite(t_param *param)
 			while (y < param->sprite.endy)
 			{
 				param->cast_all.color = ft_color_texture_sprite(param, x, y);
-				if (param->cast_all.color != 0xFFFFFF && param->cast_all.color != 0x000000)
+				if (param->cast_all.color != 0xFFFFFF &&
+				param->cast_all.color != 0x000000)
 				{
 					param->data[(param->map.window_width * y) + x] =
 						param->cast_all.color;

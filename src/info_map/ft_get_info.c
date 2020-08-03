@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_info.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:02:50 by user42            #+#    #+#             */
-/*   Updated: 2020/07/26 20:12:04 by ejawe            ###   ########.fr       */
+/*   Updated: 2020/08/03 15:42:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_init_info(t_param *param, int *check_double)
 	param->infomap.other = 0;
 }
 
-int		ft_check_all_parameter(t_param *param, int error)
+void	ft_check_all_parameter(t_param *param)
 {
 	int j;
 
@@ -37,10 +37,9 @@ int		ft_check_all_parameter(t_param *param, int error)
 	while (j < 8)
 	{
 		if (param->check_double[j] != 1)
-			error = 4;
+			ft_free_all(param, 4);
 		j++;
 	}
-	return (error);
 }
 
 void	ft_get_info(int fd, t_param *param)
@@ -64,10 +63,10 @@ void	ft_get_info(int fd, t_param *param)
 	error = ft_parse_line(line, param, error);
 	free(line);
 	line = NULL;
-	error = ft_check_all_parameter(param, error);
-	error = ft_check_correct_map(param, error);
-	ft_create_tab_map(param);
-	free(param->infomap.string);
 	if (error != 0)
 		ft_free_all(param, error);
+	ft_check_all_parameter(param);
+	ft_check_correct_map(param);
+	ft_create_tab_map(param);
+	free(param->infomap.string);
 }

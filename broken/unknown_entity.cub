@@ -1,0 +1,19 @@
+R 500 500
+
+NO ./Sci-fi_wall3.xpm
+WE ./Sci-fi_wall2.xpm
+SO ./Sci-fi_wall4.xpm
+EA ./Sci-fi_wall5.xpm
+S ./etoile.xpm
+C 176,217,244                   
+F 239, 198, 117
+
+11111
+10001
+10@01
+10?01
+10>01
+10001
+10N01
+10001
+11111

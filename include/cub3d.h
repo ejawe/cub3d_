@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:05:04 by user42            #+#    #+#             */
-/*   Updated: 2020/08/03 15:42:04 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/05 16:49:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_KEY_RELEASE 3
 # define X_EVENT_EXIT 17
-# define MINIMAP_SCALE_FACTOR 0.5
+# define MINIMAP_SCALE_FACTOR 0.3
 # define FOV_ANGLE 1.0471975511965977f
 # define NUM_TEX 5
 # define NORTH 0

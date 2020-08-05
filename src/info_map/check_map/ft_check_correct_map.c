@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:04:37 by user42            #+#    #+#             */
-/*   Updated: 2020/08/03 15:41:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/05 15:17:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,7 @@ int		ft_4_characters(t_param *param, int error)
 			error = 9;
 		i++;
 	}
-	if (ft_strchr(param->infomap.string, '2') == NULL ||
-			ft_strchr(param->infomap.string, '1') == NULL ||
-			ft_strchr(param->infomap.string, '0') == NULL)
+	if (ft_strchr(param->infomap.string, '1') == NULL)
 		error = 10;
 	return (error);
 }

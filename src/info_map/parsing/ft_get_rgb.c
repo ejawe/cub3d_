@@ -6,7 +6,7 @@
 /*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:03:43 by user42            #+#    #+#             */
-/*   Updated: 2020/07/26 20:02:39 by ejawe            ###   ########.fr       */
+/*   Updated: 2020/08/06 18:15:46 by ejawe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,20 @@ int		ft_get_number_rgb(char *line, int i, t_param *param)
 	return (i);
 }
 
+int		ft_check_number_rgb(t_param *param, int error)
+{
+	int i;
+
+	i = 0;
+	while(i < 3)
+	{
+		if (param->infomap.f_rgb[i] > 255 || param->infomap.c_rgb[i] > 255)
+			error = 6;
+		i++;
+	}
+	return (error);
+}
+
 void	ft_color_hexa(char *line, t_param *param)
 {
 	if (line[0] == 'F')
@@ -92,6 +106,7 @@ int		ft_get_rgb(char *line, t_param *param, int error)
 		i++;
 	error = ft_check_error_rgb(line, i, error);
 	i = ft_get_number_rgb(line, i, param);
+	error = ft_check_number_rgb(param, error);
 	ft_color_hexa(line, param);
 	while (line[i])
 	{

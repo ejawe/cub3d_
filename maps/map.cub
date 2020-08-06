@@ -1,12 +1,12 @@
-R 1500 1500
+R 500 500
 
 NO ./images/Sci-fi_wall3.xpm
 WE ./images/Sci-fi_wall2.xpm
 SO ./images/Sci-fi_wall4.xpm
 EA ./images/Sci-fi_wall5.xpm
 S ./images/etoile.xpm    
-C 176, 217, 244                   
-F 239, 198, 117
+C 176,217,244                   
+F 239,198,117
  
         1111111111111111111111111
         1000000000110000001000001

@@ -1,4 +1,4 @@
-R 10000 10000                  
+R 700 900                  
 
 NO ./images/mur1.xpm
 SO ./images/mur2.xpm
@@ -6,8 +6,8 @@ WE ./images/mur3.xpm
 EA ./images/mur4.xpm            
 S ./images/etoile.xpm
 
-F 255, 93,     0
-C 0,    97, 255      
+F 255,93,0
+C 0,97,255      
 
 
 1111111111111111111111111

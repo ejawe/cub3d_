@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_deal_sprite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ejawe <ejawe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 15:07:41 by user42            #+#    #+#             */
-/*   Updated: 2020/08/03 13:33:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/08/06 15:35:30 by ejawe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int		ft_color_texture_sprite(t_param *param, int x, int y)
 	int texture_offset_x;
 	int texture_offset_y;
 	int color;
+	int a;
 
+	a = sizeof(param->tex[4].data_text);
 	texture_offset_x = 0;
 	texture_offset_y = 0;
 	d = (y) * 256 - param->map.window_height * 128 +
@@ -29,11 +31,11 @@ int		ft_color_texture_sprite(t_param *param, int x, int y)
 	texture_offset_y = ((d * param->tex[4].img_height) / param->sprite.s_height)
 						/ 256;
 	if ((param->tex[4].img_width * texture_offset_y) +
-			texture_offset_x <= param->tex[4].size_file)
+			texture_offset_x < a)
+		color = 0xFFFFFF;
+	else
 		color = param->tex[4].data_text[(param->tex[4].img_width *
 				texture_offset_y) + texture_offset_x];
-	else
-		color = 0xFFFFFF;
 	return (color);
 }
 
